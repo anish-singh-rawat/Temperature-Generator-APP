@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title> Temperature converter </title>
+     <style>
+          *{
+     margin: 0%;
+     padding: 0%;
+     font-family: sans-serif;
+}
+#container{
+     border: 3px solid black;
+     width: 350px;
+     background-color: aquamarine;
+     margin-left: 400px;
+     position: relative;
+     top: 3%;
+     left: 75px;
+}
+.center{
+     position: relative;
+     left: 460px;
+     font-size: 35px;
+     font-weight: bold;
+     color: blue;
+}
+.input-div{
+     padding-bottom: 50px;
+     padding-top: 20px;
+     font-weight: 300;
+     padding-left: 85px;
+}
+label{
+     font-size: 34px;
+}
+h2{
+     padding-left: 100px;
+     padding-bottom: 9px;
+}
+.inp{
+     width: 150px;
+     height: 30px;
+     font-size: 25px !important;
+}
+.con{
+     background-color: rgb(219, 119, 174);
+     height: 350px;
+}
+
+     </style>
+
+</head>
+<body>
+     <h1 class="center"> Temperature converter </h1>
+     <div class="con">
+     <div id="container">
+          <div class="input-div">
+               <label> celceius </label>
+               <br>
+               <input type="number" value="0" id="cel" class="inp">
+          </div>
+          <h2> is Equal to</h2>
+          <div class="input-div">
+               <label> Farenhight </label>
+               <br>
+               <input type="number" value="32" id="fah" class="inp">
+          </div>
+     </div>
+</div>  
+     <script>
+          let cel = document.getElementById('cel');
+          let fah = document.getElementById('fah')
+
+          cel.addEventListener('input',firstfun)
+          fah.addEventListener('input',secfun)
+
+          function firstfun (){
+             let c = this.value;
+             let f = (c*9/5)+ 32
+             fah.value = f;   
+          }
+
+          function secfun(){
+               let f2 = this.value; 
+               let c2 = (f2-32)*5/9;
+               cel.value = c2;
+              
+          }
+     </script>
+</body>
+</html>
